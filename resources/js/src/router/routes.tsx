@@ -1,4 +1,5 @@
 import { lazy } from 'react';
+import ProtectedRoute from './ProtectedRoute'; // Import ProtectedRoute
 const Index = lazy(() => import('../pages/Index'));
 const Analytics = lazy(() => import('../pages/Analytics'));
 const Finance = lazy(() => import('../pages/Finance'));
@@ -104,7 +105,7 @@ const routes = [
     // dashboard
     {
         path: '/',
-        element: <Index />,
+        element: <ProtectedRoute><Index /></ProtectedRoute>,
     },
     // {
     //     path: '/index',
@@ -113,278 +114,278 @@ const routes = [
     // analytics page
     {
         path: '/analytics',
-        element: <Analytics />,
+        element: <ProtectedRoute><Analytics /></ProtectedRoute>,
     },
     // finance page
     {
         path: '/finance',
-        element: <Finance />,
+        element: <ProtectedRoute><Finance /></ProtectedRoute>,
     },
     // crypto page
     {
         path: '/crypto',
-        element: <Crypto />,
+        element: <ProtectedRoute><Crypto /></ProtectedRoute>,
     },
     {
         path: '/apps/todolist',
-        element: <Todolist />,
+        element: <ProtectedRoute><Todolist /></ProtectedRoute>,
     },
     {
         path: '/apps/notes',
-        element: <Notes />,
+        element: <ProtectedRoute><Notes /></ProtectedRoute>,
     },
     {
         path: '/apps/contacts',
-        element: <Contacts />,
+        element: <ProtectedRoute><Contacts /></ProtectedRoute>,
     },
     {
         path: '/apps/mailbox',
-        element: <Mailbox />,
+        element: <ProtectedRoute><Mailbox /></ProtectedRoute>,
     },
     {
         path: '/apps/invoice/list',
-        element: <List />,
+        element: <ProtectedRoute><List /></ProtectedRoute>,
     },
     // Apps page
     {
         path: '/apps/chat',
-        element: <Chat />,
+        element: <ProtectedRoute><Chat /></ProtectedRoute>,
     },
     {
         path: '/apps/scrumboard',
-        element: <Scrumboard />,
+        element: <ProtectedRoute><Scrumboard /></ProtectedRoute>,
     },
     {
         path: '/apps/calendar',
-        element: <Calendar />,
+        element: <ProtectedRoute><Calendar /></ProtectedRoute>,
     },
     // preview page
     {
         path: '/apps/invoice/preview',
-        element: <Preview />,
+        element: <ProtectedRoute><Preview /></ProtectedRoute>,
     },
     {
         path: '/apps/invoice/add',
-        element: <Add />,
+        element: <ProtectedRoute><Add /></ProtectedRoute>,
     },
     {
         path: '/apps/invoice/edit',
-        element: <Edit />,
+        element: <ProtectedRoute><Edit /></ProtectedRoute>,
     },
     // components page
     {
         path: '/components/tabs',
-        element: <Tabs />,
+        element: <ProtectedRoute><Tabs /></ProtectedRoute>,
     },
     {
         path: '/components/accordions',
-        element: <Accordians />,
+        element: <ProtectedRoute><Accordians /></ProtectedRoute>,
     },
     {
         path: '/components/modals',
-        element: <Modals />,
+        element: <ProtectedRoute><Modals /></ProtectedRoute>,
     },
     {
         path: '/components/cards',
-        element: <Cards />,
+        element: <ProtectedRoute><Cards /></ProtectedRoute>,
     },
     {
         path: '/components/carousel',
-        element: <Carousel />,
+        element: <ProtectedRoute><Carousel /></ProtectedRoute>,
     },
     {
         path: '/components/countdown',
-        element: <Countdown />,
+        element: <ProtectedRoute><Countdown /></ProtectedRoute>,
     },
     {
         path: '/components/counter',
-        element: <Counter />,
+        element: <ProtectedRoute><Counter /></ProtectedRoute>,
     },
     {
         path: '/components/sweetalert',
-        element: <SweetAlert />,
+        element: <ProtectedRoute><SweetAlert /></ProtectedRoute>,
     },
     {
         path: '/components/timeline',
-        element: <Timeline />,
+        element: <ProtectedRoute><Timeline /></ProtectedRoute>,
     },
     {
         path: '/components/notifications',
-        element: <Notification />,
+        element: <ProtectedRoute><Notification /></ProtectedRoute>,
     },
     {
         path: '/components/media-object',
-        element: <MediaObject />,
+        element: <ProtectedRoute><MediaObject /></ProtectedRoute>,
     },
     {
         path: '/components/list-group',
-        element: <ListGroup />,
+        element: <ProtectedRoute><ListGroup /></ProtectedRoute>,
     },
     {
         path: '/components/pricing-table',
-        element: <PricingTable />,
+        element: <ProtectedRoute><PricingTable /></ProtectedRoute>,
     },
     {
         path: '/components/lightbox',
-        element: <LightBox />,
+        element: <ProtectedRoute><LightBox /></ProtectedRoute>,
     },
     // elements page
     {
         path: '/elements/alerts',
-        element: <Alerts />,
+        element: <ProtectedRoute><Alerts /></ProtectedRoute>,
     },
     {
         path: '/elements/avatar',
-        element: <Avatar />,
+        element: <ProtectedRoute><Avatar /></ProtectedRoute>,
     },
     {
         path: '/elements/badges',
-        element: <Badges />,
+        element: <ProtectedRoute><Badges /></ProtectedRoute>,
     },
     {
         path: '/elements/breadcrumbs',
-        element: <Breadcrumbs />,
+        element: <ProtectedRoute><Breadcrumbs /></ProtectedRoute>,
     },
     {
         path: '/elements/buttons',
-        element: <Buttons />,
+        element: <ProtectedRoute><Buttons /></ProtectedRoute>,
     },
     {
         path: '/elements/buttons-group',
-        element: <Buttongroups />,
+        element: <ProtectedRoute><Buttongroups /></ProtectedRoute>,
     },
     {
         path: '/elements/color-library',
-        element: <Colorlibrary />,
+        element: <ProtectedRoute><Colorlibrary /></ProtectedRoute>,
     },
     {
         path: '/elements/dropdown',
-        element: <DropdownPage />,
+        element: <ProtectedRoute><DropdownPage /></ProtectedRoute>,
     },
     {
         path: '/elements/infobox',
-        element: <Infobox />,
+        element: <ProtectedRoute><Infobox /></ProtectedRoute>,
     },
     {
         path: '/elements/jumbotron',
-        element: <Jumbotron />,
+        element: <ProtectedRoute><Jumbotron /></ProtectedRoute>,
     },
     {
         path: '/elements/loader',
-        element: <Loader />,
+        element: <ProtectedRoute><Loader /></ProtectedRoute>,
     },
     {
         path: '/elements/pagination',
-        element: <Pagination />,
+        element: <ProtectedRoute><Pagination /></ProtectedRoute>,
     },
     {
         path: '/elements/popovers',
-        element: <Popovers />,
+        element: <ProtectedRoute><Popovers /></ProtectedRoute>,
     },
     {
         path: '/elements/progress-bar',
-        element: <Progressbar />,
+        element: <ProtectedRoute><Progressbar /></ProtectedRoute>,
     },
     {
         path: '/elements/search',
-        element: <Search />,
+        element: <ProtectedRoute><Search /></ProtectedRoute>,
     },
     {
         path: '/elements/tooltips',
-        element: <Tooltip />,
+        element: <ProtectedRoute><Tooltip /></ProtectedRoute>,
     },
     {
         path: '/elements/treeview',
-        element: <Treeview />,
+        element: <ProtectedRoute><Treeview /></ProtectedRoute>,
     },
     {
         path: '/elements/typography',
-        element: <Typography />,
+        element: <ProtectedRoute><Typography /></ProtectedRoute>,
     },
 
     // charts page
     {
         path: '/charts',
-        element: <Charts />,
+        element: <ProtectedRoute><Charts /></ProtectedRoute>,
     },
     // widgets page
     {
         path: '/widgets',
-        element: <Widgets />,
+        element: <ProtectedRoute><Widgets /></ProtectedRoute>,
     },
     //  font-icons page
     {
         path: '/font-icons',
-        element: <FontIcons />,
+        element: <ProtectedRoute><FontIcons /></ProtectedRoute>,
     },
     //  Drag And Drop page
     {
         path: '/dragndrop',
-        element: <DragAndDrop />,
+        element: <ProtectedRoute><DragAndDrop /></ProtectedRoute>,
     },
     //  Tables page
     {
         path: '/tables',
-        element: <Tables />,
+        element: <ProtectedRoute><Tables /></ProtectedRoute>,
     },
     // Data Tables
     {
         path: '/datatables/basic',
-        element: <Basic />,
+        element: <ProtectedRoute><Basic /></ProtectedRoute>,
     },
     {
         path: '/datatables/advanced',
-        element: <Advanced />,
+        element: <ProtectedRoute><Advanced /></ProtectedRoute>,
     },
     {
         path: '/datatables/skin',
-        element: <Skin />,
+        element: <ProtectedRoute><Skin /></ProtectedRoute>,
     },
     {
         path: '/datatables/order-sorting',
-        element: <OrderSorting />,
+        element: <ProtectedRoute><OrderSorting /></ProtectedRoute>,
     },
     {
         path: '/datatables/multi-column',
-        element: <MultiColumn />,
+        element: <ProtectedRoute><MultiColumn /></ProtectedRoute>,
     },
     {
         path: '/datatables/multiple-tables',
-        element: <MultipleTables />,
+        element: <ProtectedRoute><MultipleTables /></ProtectedRoute>,
     },
     {
         path: '/datatables/alt-pagination',
-        element: <AltPagination />,
+        element: <ProtectedRoute><AltPagination /></ProtectedRoute>,
     },
     {
         path: '/datatables/checkbox',
-        element: <Checkbox />,
+        element: <ProtectedRoute><Checkbox /></ProtectedRoute>,
     },
     {
         path: '/datatables/range-search',
-        element: <RangeSearch />,
+        element: <ProtectedRoute><RangeSearch /></ProtectedRoute>,
     },
     {
         path: '/datatables/export',
-        element: <Export />,
+        element: <ProtectedRoute><Export /></ProtectedRoute>,
     },
     {
         path: '/datatables/column-chooser',
-        element: <ColumnChooser />,
+        element: <ProtectedRoute><ColumnChooser /></ProtectedRoute>,
     },
     // Users page
     {
         path: '/users/profile',
-        element: <Profile />,
+        element: <ProtectedRoute><Profile /></ProtectedRoute>,
     },
     {
         path: '/users/user-account-settings',
-        element: <AccountSetting />,
+        element: <ProtectedRoute><AccountSetting /></ProtectedRoute>,
     },
     // pages
     {
         path: '/pages/knowledge-base',
-        element: <KnowledgeBase />,
+        element: <ProtectedRoute><KnowledgeBase /></ProtectedRoute>,
     },
     {
         path: '/pages/contact-us-boxed',
@@ -474,63 +475,63 @@ const routes = [
     //forms page
     {
         path: '/forms/basic',
-        element: <FormBasic />,
+        element: <ProtectedRoute><FormBasic /></ProtectedRoute>,
     },
     {
         path: '/forms/input-group',
-        element: <FormInputGroup />,
+        element: <ProtectedRoute><FormInputGroup /></ProtectedRoute>,
     },
     {
         path: '/forms/layouts',
-        element: <FormLayouts />,
+        element: <ProtectedRoute><FormLayouts /></ProtectedRoute>,
     },
     {
         path: '/forms/validation',
-        element: <Validation />,
+        element: <ProtectedRoute><Validation /></ProtectedRoute>,
     },
     {
         path: '/forms/input-mask',
-        element: <InputMask />,
+        element: <ProtectedRoute><InputMask /></ProtectedRoute>,
     },
     {
         path: '/forms/select2',
-        element: <Select2 />,
+        element: <ProtectedRoute><Select2 /></ProtectedRoute>,
     },
     {
         path: '/forms/touchspin',
-        element: <Touchspin />,
+        element: <ProtectedRoute><Touchspin /></ProtectedRoute>,
     },
     {
         path: '/forms/checkbox-radio',
-        element: <CheckBoxRadio />,
+        element: <ProtectedRoute><CheckBoxRadio /></ProtectedRoute>,
     },
     {
         path: '/forms/switches',
-        element: <Switches />,
+        element: <ProtectedRoute><Switches /></ProtectedRoute>,
     },
     {
         path: '/forms/wizards',
-        element: <Wizards />,
+        element: <ProtectedRoute><Wizards /></ProtectedRoute>,
     },
     {
         path: '/forms/file-upload',
-        element: <FileUploadPreview />,
+        element: <ProtectedRoute><FileUploadPreview /></ProtectedRoute>,
     },
     {
         path: '/forms/quill-editor',
-        element: <QuillEditor />,
+        element: <ProtectedRoute><QuillEditor /></ProtectedRoute>,
     },
     {
         path: '/forms/markdown-editor',
-        element: <MarkDownEditor />,
+        element: <ProtectedRoute><MarkDownEditor /></ProtectedRoute>,
     },
     {
         path: '/forms/date-picker',
-        element: <DateRangePicker />,
+        element: <ProtectedRoute><DateRangePicker /></ProtectedRoute>,
     },
     {
         path: '/forms/clipboard',
-        element: <Clipboard />,
+        element: <ProtectedRoute><Clipboard /></ProtectedRoute>,
     },
     {
         path: '/about',

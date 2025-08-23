@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { setPageTitle, toggleRTL } from '../../store/themeConfigSlice';
 import Dropdown from '../../components/Dropdown';
 import i18next from 'i18next';
+import axios from '../../lib/axios';
 
 const LoginBoxed = () => {
     const dispatch = useDispatch();
@@ -24,9 +25,30 @@ const LoginBoxed = () => {
         }
     };
     const [flag, setFlag] = useState(themeConfig.locale);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
-    const submitForm = () => {
-        navigate('/');
+    const submitForm = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setError('');
+        try {
+            await axios.get('/sanctum/csrf-cookie');
+            await axios.post('/login', { email, password });
+            window.location.pathname = '/';
+        } catch (err: any) {
+            if (err.response && err.response.status === 422) {
+                const validationErrors = err.response.data.errors;
+                if (validationErrors.email) {
+                    setError(validationErrors.email[0]);
+                } else {
+                    setError(err.response.data.message || 'The provided credentials do not match our records.');
+                }
+            } else {
+                setError('An error occurred. Please try again.');
+                console.error(err);
+            }
+        }
     };
 
     return (
@@ -94,10 +116,15 @@ const LoginBoxed = () => {
                                 <p className="text-base font-bold leading-normal text-white-dark">Enter your email and password to login</p>
                             </div>
                             <form className="space-y-5 dark:text-white" onSubmit={submitForm}>
+                                {error && (
+                                    <div className="p-3.5 rounded-md bg-danger-light border border-danger text-danger">
+                                        <p>{error}</p>
+                                    </div>
+                                )}
                                 <div>
                                     <label htmlFor="Email">Email</label>
                                     <div className="relative text-white-dark">
-                                        <input id="Email" type="email" placeholder="Enter Email" className="form-input ps-10 placeholder:text-white-dark" />
+                                        <input id="Email" type="email" placeholder="Enter Email" className="form-input ps-10 placeholder:text-white-dark" value={email} onChange={(e) => setEmail(e.target.value)} required />
                                         <span className="absolute start-4 top-1/2 -translate-y-1/2">
                                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                                                 <path
@@ -116,7 +143,7 @@ const LoginBoxed = () => {
                                 <div>
                                     <label htmlFor="Password">Password</label>
                                     <div className="relative text-white-dark">
-                                        <input id="Password" type="password" placeholder="Enter Password" className="form-input ps-10 placeholder:text-white-dark" />
+                                        <input id="Password" type="password" placeholder="Enter Password" className="form-input ps-10 placeholder:text-white-dark" value={password} onChange={(e) => setPassword(e.target.value)} required />
                                         <span className="absolute start-4 top-1/2 -translate-y-1/2">
                                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                                                 <path
