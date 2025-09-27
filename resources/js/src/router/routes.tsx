@@ -100,6 +100,8 @@ const QuillEditor = lazy(() => import('../pages/Forms/QuillEditor'));
 const MarkDownEditor = lazy(() => import('../pages/Forms/MarkDownEditor'));
 const DateRangePicker = lazy(() => import('../pages/Forms/DateRangePicker'));
 const Clipboard = lazy(() => import('../pages/Forms/Clipboard'));
+const Brand = lazy(() => import('../pages/Master/Brand'));
+
 
 const routes = [
     // dashboard
@@ -543,6 +545,11 @@ const routes = [
         element: <Error />,
         layout: 'blank',
     },
+    // Masters
+    {
+        path: '/masters/brand',
+        element: <ProtectedRoute><Brand /></ProtectedRoute>,
+    }
 ];
 
 export { routes };
