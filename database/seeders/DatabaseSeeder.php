@@ -19,5 +19,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@admin.com',
             // 'password' => 'admin123'
         ]);
+
+        $this->call(BrandSeeder::class);
     }
 }

@@ -14,8 +14,17 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
-        "jsx": "react-jsx"
+        "jsx": "react-jsx",
+
+        // =======================================================
+        // TAMBAHKAN 2 BARIS INI UNTUK MENGAKTIFKAN PATH ALIAS '@'
+        // =======================================================
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["resources/js/src/*"]
+        }
     },
-    "include": ["src"],
+    // UBAH "include" AGAR SESUAI DENGAN LOKASI KODE ANDA
+    "include": ["resources/js/src"],
     "references": [{ "path": "./tsconfig.node.json" }]
 }
