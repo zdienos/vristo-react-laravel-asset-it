@@ -24,7 +24,7 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
 
     if (!isAuthenticated) {
         // Redirect ke halaman login jika tidak terotentikasi
-        return <Navigate to="/auth/boxed-signin" />;
+        return <Navigate to="/auth/signin" />;
     }
 
     return <>{children}</>;

@@ -433,7 +433,7 @@ const routes = [
     },
     //Authentication
     {
-        path: '/auth/boxed-signin',
+        path: '/auth/signin',
         element: <LoginBoxed />,
         layout: 'blank',
     },
