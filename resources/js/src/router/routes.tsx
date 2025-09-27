@@ -100,7 +100,7 @@ const QuillEditor = lazy(() => import('../pages/Forms/QuillEditor'));
 const MarkDownEditor = lazy(() => import('../pages/Forms/MarkDownEditor'));
 const DateRangePicker = lazy(() => import('../pages/Forms/DateRangePicker'));
 const Clipboard = lazy(() => import('../pages/Forms/Clipboard'));
-const Brand = lazy(() => import('../pages/Master/Brand'));
+const Brand = lazy(() => import('@/pages/Masters/Brand'));
 
 
 const routes = [
