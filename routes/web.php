@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\Api\AuthController;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,13 +16,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/register', [AuthController::class, 'register'])
-                ->middleware('guest');
+// Route::post('/register', [AuthController::class, 'register'])
+//                 ->middleware('guest');
 
 Route::post('/login', [AuthController::class, 'login'])
-                ->middleware('guest');
+    ->middleware('guest');
 
 Route::post('/logout', [AuthController::class, 'logout'])
-                ->middleware('auth');
+    ->middleware('auth');
 
-Route::get('/{any}', [AppController::class, 'index'])->where('any', '.*');
+// Route::get('/auth/sigin', [AppController::class, 'index']);
+
+
+Route::get('/auth/signin', function () {
+    return view('app'); // atau redirect ke React index.html
+})->name('login');
+
+
+Route::get('/{any}', [AppController::class, 'index'])
+    ->middleware('auth:sanctum')
+    ->where('any', '.*');
+
+// Route::get('/{any}', fn(Request $request) => $request->user())->middleware('auth:sanctum');
+
+
+// Route::get('/{any}', [AppController::class, 'index'])->where('any', '.*');

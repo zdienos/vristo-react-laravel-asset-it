@@ -45,4 +45,15 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    // protected function unauthenticated($request, \Illuminate\Auth\AuthenticationException $exception)
+    // {
+    //     // Kalau request API, jangan redirect
+    //     if ($request->expectsJson()) {
+    //         return response()->json(['message' => 'Unauthenticated'], 401);
+    //     }
+
+    //     // Kalau masih ada web guard, redirect ke React SPA route
+    //     return redirect('/auth/signin');
+    // }
 }
