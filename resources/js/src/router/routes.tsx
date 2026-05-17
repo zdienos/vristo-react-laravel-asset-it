@@ -102,6 +102,18 @@ const MarkDownEditor = lazy(() => import('../pages/Forms/MarkDownEditor'));
 const DateRangePicker = lazy(() => import('../pages/Forms/DateRangePicker'));
 const Clipboard = lazy(() => import('../pages/Forms/Clipboard'));
 const Brand = lazy(() => import('@/pages/Masters/Brand'));
+const Dashboard = lazy(() => import('@/pages/Dashboard'));
+const Kategori = lazy(() => import('@/pages/Masters/Kategori'));
+const Manufaktur = lazy(() => import('@/pages/Masters/Manufaktur'));
+const ModelProduk = lazy(() => import('@/pages/Masters/ModelProduk'));
+const Departemen = lazy(() => import('@/pages/Masters/Departemen'));
+const Lokasi = lazy(() => import('@/pages/Masters/Lokasi'));
+const Pengguna = lazy(() => import('@/pages/Masters/Pengguna'));
+const Asset = lazy(() => import('@/pages/Transaksi/Asset'));
+const Asesoris = lazy(() => import('@/pages/Transaksi/Asesoris'));
+const Inventori = lazy(() => import('@/pages/Transaksi/Inventori'));
+const Komponen = lazy(() => import('@/pages/Transaksi/Komponen'));
+const Laporan = lazy(() => import('@/pages/Laporan'));
 
 export type AppRoute = {
     path: string;
@@ -130,12 +142,58 @@ export const routes: AppRoute[] = [
             // dashboard
             {
                 path: '/',
-                element: <Index />,
+                element: <Dashboard />,
             },
             // Masters
             {
                 path: '/masters/brand',
                 element: <Brand />,
+            },
+            {
+                path: '/masters/kategori',
+                element: <Kategori />,
+            },
+            {
+                path: '/masters/manufaktur',
+                element: <Manufaktur />,
+            },
+            {
+                path: '/masters/model',
+                element: <ModelProduk />,
+            },
+            {
+                path: '/masters/departemen',
+                element: <Departemen />,
+            },
+            {
+                path: '/masters/lokasi',
+                element: <Lokasi />,
+            },
+            {
+                path: '/masters/pengguna',
+                element: <Pengguna />,
+            },
+            // Transaksi
+            {
+                path: '/transaksi/asset',
+                element: <Asset />,
+            },
+            {
+                path: '/transaksi/asesoris',
+                element: <Asesoris />,
+            },
+            {
+                path: '/transaksi/inventori',
+                element: <Inventori />,
+            },
+            {
+                path: '/transaksi/komponen',
+                element: <Komponen />,
+            },
+            // Laporan
+            {
+                path: '/laporan',
+                element: <Laporan />,
             }
         ]
     }
