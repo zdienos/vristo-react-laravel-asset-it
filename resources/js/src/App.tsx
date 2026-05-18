@@ -29,7 +29,7 @@ function App({ children }: PropsWithChildren) {
         const bootstrapAuth = async () => {
             try {
                 // if (isAuthenticated) {
-                const { data: user } = await api.get("/api/useddr");
+                const { data: user } = await api.get("/api/user");
                 dispatch(setUser(user));
                 // }
             } catch {
